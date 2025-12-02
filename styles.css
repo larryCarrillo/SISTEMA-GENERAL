@@ -1,0 +1,313 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    
+    /* PROPIEDADES PARA LA IMAGEN DE FONDO */
+    background-image: url('fondo_planta.jpg'); /* Asegúrate que este nombre sea correcto */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    color: #333;
+    position: relative; 
+}
+
+/* --- ESTILO PARA EL LOGO LEBAREF --- */
+#logo-login {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 180px; /* Tamaño del logo */
+    height: auto;
+    z-index: 10;
+    /* El logo Lebaref es negro/oscuro, le damos una sombra blanca para que destaque sobre el fondo verde */
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.9)); 
+}
+
+/* --- 1. LOGIN STYLES --- */
+
+.center-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    /* Eliminamos el fondo para que la imagen del body se vea */
+}
+
+#login-form {
+    /* CAMBIO 2: Fondo semi-transparente para ver el fondo detrás */
+    background: rgba(255, 255, 255, 0.75); /* Blanco con 75% de opacidad */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra para resaltar */
+    min-width: 300px;
+}
+
+/* CAMBIO 1: Estilo para el título dentro del formulario */
+#login-form h2 {
+    text-align: center;
+    color: #007bff; /* Color azul para el título */
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+#login-form label, #login-form input, #login-form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#login-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#login-form button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#login-message {
+    text-align: center;
+    color: red;
+    font-size: 0.9em;
+    height: 1em;
+}
+
+/* --- 2. TABLE & MAIN CONTENT STYLES --- */
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+    background-color: #f4f7f6; /* Fondo sólido en la vista principal para mejor lectura */
+    min-height: 100vh;
+}
+
+.section-title {
+    color: #007bff;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggle-button {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.2s;
+}
+.toggle-button:hover {
+    background-color: #5a6268;
+}
+
+.equipment-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.equipment-table th, .equipment-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.equipment-table th {
+    background-color: #007bff;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.equipment-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+/* --- 3. BUTTON STYLES (CRUD) --- */
+
+.action-button {
+    background-color: #ffc107;
+    color: #333;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 0.85em;
+    margin-right: 5px;
+    margin-bottom: 5px; 
+    transition: background-color 0.2s;
+}
+.action-button:hover {
+    background-color: #e0a800;
+}
+
+.action-button-success {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-bottom: 20px;
+    transition: background-color 0.2s;
+}
+.action-button-success:hover {
+    background-color: #218838;
+}
+
+.action-button-danger {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 0.85em;
+    transition: background-color 0.2s;
+}
+.action-button-danger:hover {
+    background-color: #c82333;
+}
+
+
+/* --- 4. MODAL STYLES (Detalle y CRUD) --- */
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-content form input, 
+.modal-content form select,
+.modal-content form textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.modal-content form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.modal-content form button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+.modal-content form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover, .close-button:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+/* Modal Details List Style */
+#detail-body ul {
+    list-style: none;
+    padding: 0;
+}
+#detail-body ul li {
+    padding: 5px 0;
+    border-bottom: 1px dotted #eee;
+}
+#detail-body h4 {
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    margin-top: 20px;
+    color: #007bff;
+}
+
+
+/* --- 5. UTILITY & STATUS COLORS --- */
+
+.hidden {
+    display: none !important;
+}
+
+.active-status {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.inactive-status {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.maintenance-status {
+    color: #ffc107;
+    font-weight: bold;
+}
